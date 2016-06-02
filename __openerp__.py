@@ -7,6 +7,6 @@ ITI HR
 ==========================
     """,
     'data': [
-        'odoo_hr_view.xml'
+        'myOdoo_view.xml'
     ],
 }

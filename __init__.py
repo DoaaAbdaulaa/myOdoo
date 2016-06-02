@@ -1,3 +1,3 @@
 
 
-import odoo_hr
+import myOdoo
