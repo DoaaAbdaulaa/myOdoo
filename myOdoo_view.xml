@@ -34,12 +34,45 @@
             <field name="arch" type="xml">
                 <!--page string="HR Settings" string="Personal Information" groups="base.group_hr_user" -->
                 <xpath expr="//notebook"  position="inside">
-                     <page  string="Public Info" >
-                        <group>
-                             <field name="data" string="CV" />
-                           
+                    <page string="Education" >
+                        <group string="Degree">
+                            <field name="degree_level" string="Degree Level"/>
+                            <field name="country_id" options='{"no_open": True, "no_create": True}' string="Location"/>
+                            <field name="university_name" string="University" />
+                            <field name="fields_study" string="Fields Study"/>
+                            <field name="grade" string="Grade"/>
                         </group>
+                            <group string="Date Attended">
+                                <field name="degree_from" string="From"/>
+                                <field name="degree_to" string="To"/>
+                            </group>
+
+                                <field name="note" string="Note" placeholder="Note"/>
+
+
+                    </page>
+                     <page  string="Experiences" >
+                        <group string="Basic Information">
+                            <field name="job_title" />
+                            <field name="country_id" options='{"no_open": True, "no_create": True}' string="Location"/>
+                            <field name="city"/>
+                            <field name="website"/>
+                        </group>
+                         <group string="Time Period">
+                             <field name="date_from"/>
+                             <field name="date_to"/>
+                             <field name="total_years" string="Years of experience "/>
+
+                         </group>
+
                      </page>
+                    <page  string="Your Attachments" >
+                        <group >
+                            <field name="graduation_certificate" string="Graduation Certificate"/>
+                            <field name="Ecertificate" string="Experience certificate"/>
+                            <field name="data" string="CV" />
+                        </group>
+                    </page>
                 </xpath>
             </field>
         </record>
@@ -50,80 +83,3 @@
     </data>
 </openerp>
 
-
- <!--<form string="Employee">-->
-                    <!--<sheet>-->
-                        <!--<div class="oe_button_box" name="button_box" groups="base.group_hr_user">-->
-                            <!--<button name="toggle_active" type="object"-->
-                                    <!--class="oe_stat_button" icon="fa-archive">-->
-                                <!--<field name="active" widget="boolean_button"-->
-                                    <!--options='{"terminology": "archive"}'/>-->
-                            <!--</button>-->
-                        <!--</div>-->
-                        <!--<field name="image" widget='image' class="oe_avatar" options='{"preview_image":"image_medium"}'/>-->
-                        <!--<div class="oe_title">-->
-                            <!--<label for="name" class="oe_edit_only"/>-->
-                            <!--<h1>-->
-                                <!--<field name="name" placeholder="Employee's Name"/>-->
-                            <!--</h1>-->
-                        <!--</div>-->
-                        <!--<field name="category_ids" widget="many2many_tags" placeholder="e.g. Part Time" groups="base.group_hr_user"/>-->
-                        <!--<notebook>-->
-                            <!--<page name="public" string="Public Information">-->
-                                <!--<group>-->
-                                    <!--<group string="Contact Information">-->
-                                        <!--<field name="address_id" on_change="onchange_address_id(address_id)"-->
-                                            <!--context="{'show_address': 1}"-->
-                                            <!--options='{"always_reload": True, "highlight_first_line": True}'/>-->
-                                        <!--<field name="mobile_phone"/>-->
-                                        <!--<field name="work_location"/>-->
-                                        <!--<field name="work_email" widget="email"/>-->
-                                        <!--<field name="work_phone"/>-->
-                                    <!--</group>-->
-                                    <!--<group string="Position">-->
-                                        <!--<field name="department_id" on_change="onchange_department_id(department_id)"/>-->
-                                        <!--<field name="job_id"/>-->
-                                        <!--<field name="parent_id"/>-->
-                                        <!--<field name="coach_id"/>-->
-                                    <!--</group>-->
-                                <!--</group>-->
-                                <!--<field name="notes" placeholder="Other Information ..." colspan="4"/>-->
-                            <!--</page>-->
-                            <!--<page string="Personal Information" groups="base.group_hr_user">-->
-                                <!--<group>-->
-                                    <!--<group string="Citizenship &amp; Other Information">-->
-                                        <!--<field name="country_id" options='{"no_open": True, "no_create": True}'/>-->
-                                        <!--<field name="identification_id" groups="base.group_hr_user"/>-->
-                                        <!--<field name="passport_id" groups="base.group_hr_user"/>-->
-                                        <!--<field name="bank_account_id"/>-->
-                                    <!--</group>-->
-                                    <!--<group string="Contact Information">-->
-                                        <!--<field name="address_home_id"-->
-                                            <!--context="{'show_address': 1}"-->
-                                            <!--options='{"always_reload": True, "highlight_first_line": True}'/>-->
-                                    <!--</group>-->
-                                    <!--<group string="Status">-->
-                                        <!--<field name="gender"/>-->
-                                        <!--<field name="marital"/>-->
-                                    <!--</group>-->
-                                    <!--<group string="Birth">-->
-                                        <!--<field name="birthday"/>-->
-                                    <!--</group>-->
-                                <!--</group>-->
-                            <!--</page>-->
-                            <!--<page string="HR Settings" groups="base.group_hr_user">-->
-                                <!--<group>-->
-                                    <!--<group string='Status' name="active_group">-->
-                                        <!--<field name="company_id" groups="base.group_multi_company" on_change="onchange_company(company_id)"/>-->
-                                        <!--<field name="user_id" on_change="onchange_user(name, image, user_id)" string="Related User"-->
-                                            <!--context="{'default_groups_ref': ['base.group_user']}"/>-->
-                                    <!--</group>-->
-                                <!--</group>-->
-                            <!--</page>-->
-                        <!--</notebook>-->
-                    <!--</sheet>-->
-                    <!--<div class="oe_chatter">-->
-                        <!--<field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>-->
-                        <!--<field name="message_ids" widget="mail_thread"/>-->
-                    <!--</div>-->
-                <!--</form>-->
