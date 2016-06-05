@@ -1,3 +1,3 @@
 
 
-import myOdoo
+import myodoo
