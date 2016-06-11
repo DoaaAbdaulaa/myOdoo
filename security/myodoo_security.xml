@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <!-- to enter in database only ones    -->
+    <data noupdate="1">
+
+    <record id="base.group_hr_user" model="res.groups">
+        <field name="name">Sub Manager </field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">the user will be able to approve document created by employees.</field>
+    </record>
+
+        <record id="base.group_hr_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="comment">the user will have an access to the human resources configuration as well as statistic reports.</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_hr_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+
+       <!---->
+        <!--<record id="myodoo_security_category" model="ir.module.category">-->
+            <!--<field name="name">HR</field>-->
+        <!--</record>-->
+       <!--<record id="myodoo_employee_group" model="res.groups">-->
+            <!--<field name="name"> Employee</field>-->
+            <!--<field name="category_id" ref="myodoo_security_category" />-->
+            <!--<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+            <!--<field name="comment"> Well Employee in this group  </field>-->
+       <!--</record>-->
+
+       <!--<record id="myodoo_submanager_group" model="res.groups">-->
+            <!--<field name="name"> SubManager</field>-->
+            <!--<field name="category_id" ref="myodoo_security_category" />-->
+            <!--<field name="implied_ids" eval="[(4, ref('myodoo_employee_group'))]"/>-->
+            <!--<field name="comment"> Well SubManager in this group  </field>-->
+       <!--</record>-->
+
+       <!--<record id="myodoo_manager_group" model="res.groups">-->
+            <!--<field name="name"> Manager</field>-->
+            <!--<field name="category_id" ref="myodoo_security_category" />-->
+            <!--<field name="implied_ids" eval="[(4, ref('myodoo_submanager_group'))]"/>-->
+            <!--<field name="comment"> Well manager in this group  </field>-->
+       <!--</record>-->
+
+    </data>
+</openerp>

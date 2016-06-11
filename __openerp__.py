@@ -7,6 +7,8 @@ ITI HR
 ==========================
     """,
     'data': [
-        'myodoo_view.xml'
+        'myodoo_view.xml',
+        'security/myodoo_security.xml',
+        'security/ir.model.access.csv',
     ],
 }
