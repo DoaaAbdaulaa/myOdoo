@@ -41,7 +41,7 @@ class odooHrEmployeeInherit(models.Model):
     data= fields.Binary('File')
     graduation_certificate=fields.Binary()
     #_______________  experience ____________
-    experience_ids=fields.One2many("odoo_hr.exprience","employee_id",string="Experience")
+    experience_ids=fields.One2many("myodoo.exprience","employee_id",string="Experience")
 
     #_______________ Eduvation _________________
     degree_level=fields.Selection(selection=[('V','Vocational'),('TD','Technical Diploma'),('CD','Collage Diploma'),('BD','Bachelors Degree'),('MD','Master Degree'),('MBA','MBA'),('DD','Doctorate Degree')])
@@ -53,17 +53,23 @@ class odooHrEmployeeInherit(models.Model):
 
     degree_from= fields.Date(string='From')
     degree_to= fields.Date(string='To')
-    #-------------- test ---------------------
+
+   ## university_name=fields.Char()
 
     university_name=fields.Char()
     fields_study=fields.Char()
     grade=fields.Selection(selection=[('A','A / Excellent / 85-100 %'),('B','B / Very good / 75-85 %'),('C','C / Good / 65-75 %'),('NS','Not Specified')])
     note=fields.Text()
+    #------------ secyrity -----------
+
+
+    sub_parent_id= fields.Many2one('hr.employee', string='Sub Manager')
+
 
 
 class MyOdooexperiance(models.Model):
 
-    _name = "odoo_hr.exprience"
+    _name = "myodoo.exprience"
 
     @api.model
     def create(self, values):
@@ -148,3 +154,5 @@ class MyOdooexperiance(models.Model):
     ecertificate=fields.Binary()
     employee_id=fields.Many2one("hr.employee")
     country= fields.Selection(selection=[('E','Egypt')])
+
+    #------------------------ security ---------------

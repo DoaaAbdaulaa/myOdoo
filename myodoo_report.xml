@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+             id="myodoo_first_report_employee"
+             model="hr.employee"
+             name="myodoo.first_report"
+             file="myodoo.first_report"
+             report_type="qweb-pdf"
+             string="Report Employee"/>
+
+        <report
+             id="myodoo_first_report_leaves"
+             model="hr.holidays"
+             name="myodoo.leaves_report"
+             file="myodoo.leaves_report"
+             report_type="qweb-pdf"
+             string="Report Leaves"/>
+    </data>
+    </openerp>
